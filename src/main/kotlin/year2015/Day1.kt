@@ -14,6 +14,7 @@ fun main() {
 class Day1 {
 
     private val input = readFileText("year2015/day1input")
+
     fun part1() {
         println(
             input.map { if (it == '(') 1 else -1 }.sum()
