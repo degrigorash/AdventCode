@@ -1,6 +1,5 @@
 package year2015
 
-
 import tools.readFileText
 
 fun main() {

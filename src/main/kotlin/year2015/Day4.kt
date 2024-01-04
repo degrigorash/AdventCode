@@ -1,6 +1,5 @@
 package year2015
 
-
 import java.security.MessageDigest
 
 fun main() {
