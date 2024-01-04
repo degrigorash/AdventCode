@@ -1,5 +1,7 @@
 package year2015
 
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.*
 import tools.readFileText
 
 fun main() {
@@ -45,6 +47,40 @@ class Day12 {
     }
 
     fun part2() {
+        val json = Json.decodeFromString<JsonArray>(input)
+        println(json.proceed())
+    }
 
+    private fun JsonElement.proceed(): Int {
+        return when (this) {
+            is JsonArray -> {
+                this.sumOf { it.proceed() }
+            }
+
+            is JsonObject -> {
+                if (this.entries.any { it.value is JsonPrimitive && it.value.jsonPrimitive.content == "red" }) {
+                    0
+                } else {
+                    this.entries.sumOf {
+                        when {
+                            it.value is JsonPrimitive && it.value.jsonPrimitive.intOrNull != null -> {
+                                it.value.jsonPrimitive.int
+                            }
+
+                            it.value is JsonArray -> it.value.jsonArray.sumOf { it.proceed() }
+
+                            it.value is JsonObject -> it.value.proceed()
+                            else -> 0
+                        }
+                    }
+                }
+            }
+
+            is JsonPrimitive -> this.jsonPrimitive.intOrNull ?: 0
+
+            else -> {
+                0
+            }
+        }
     }
 }
