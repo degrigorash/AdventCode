@@ -1,5 +1,6 @@
 package year2015
 
+import tools.permutations
 import tools.readFile
 import kotlin.math.max
 
@@ -27,7 +28,7 @@ class Day13 {
 
     fun part1() {
         var optimal = 0
-        permutations(names.toList()).forEach { permutation ->
+        names.toList().permutations().forEach { permutation ->
             var sum = 0
             permutation.forEachIndexed { i, name ->
                 val partner1 = if (i == 0) permutation.last() else permutation[i - 1]
@@ -46,7 +47,7 @@ class Day13 {
 
     fun part2() {
         var optimal = 0
-        permutations(names.toList() + "me").forEach { permutation ->
+        (names.toList() + "me").permutations().forEach { permutation ->
             var sum = 0
             permutation.forEachIndexed { i, name ->
                 val partner1 = if (i == 0) permutation.last() else permutation[i - 1]
@@ -61,19 +62,5 @@ class Day13 {
             optimal = max(optimal, sum)
         }
         println(optimal)
-    }
-
-    private fun permutations(list: List<String>): List<List<String>> {
-        if (list.size == 1) return listOf(list)
-        val perms = mutableListOf<List<String>>()
-        val sub = list[0]
-        for (perm in permutations(list.drop(1))) {
-            for (i in 0..perm.size) {
-                val newPerm = perm.toMutableList()
-                newPerm.add(i, sub)
-                perms.add(newPerm)
-            }
-        }
-        return perms
     }
 }
