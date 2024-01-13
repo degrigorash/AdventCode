@@ -21,7 +21,7 @@ class Day18 {
         repeat(100) {
             val newMap = MutableList(100) { MutableList(100) { false } }
             myMap.forEachIndexed { y, lights ->
-                lights.forEachIndexed { x, light ->
+                lights.forEachIndexed { x, _ ->
                     val neighbors = listOf(
                         myMap.getOrNull(y - 1)?.getOrNull(x - 1) ?: false,
                         myMap.getOrNull(y - 1)?.getOrNull(x) ?: false,
@@ -53,7 +53,7 @@ class Day18 {
         repeat(100) {
             val newMap = MutableList(100) { MutableList(100) { false } }
             myMap.forEachIndexed { y, lights ->
-                lights.forEachIndexed { x, light ->
+                lights.forEachIndexed { x, _ ->
                     val neighbors = listOf(
                         myMap.getOrNull(y - 1)?.getOrNull(x - 1) ?: false,
                         myMap.getOrNull(y - 1)?.getOrNull(x) ?: false,
