@@ -18,7 +18,7 @@ class Day18 {
 
     fun part1() {
         var myMap = map
-        (0..99).forEach {
+        repeat(100) {
             val newMap = MutableList(100) { MutableList(100) { false } }
             myMap.forEachIndexed { y, lights ->
                 lights.forEachIndexed { x, light ->
