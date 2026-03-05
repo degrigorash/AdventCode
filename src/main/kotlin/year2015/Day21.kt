@@ -90,16 +90,16 @@ class Day21 {
     private fun duelEqualHpLose(player: Player): Boolean {
         return player.armor + player.damage < boss.armor + boss.damage
     }
+
+    private data class Player(
+        val hp: Int,
+        val damage: Int,
+        val armor: Int
+    )
+
+    private data class Item(
+        val cost: Int,
+        val damage: Int,
+        val armor: Int
+    )
 }
-
-private class Player(
-    var hp: Int,
-    var damage: Int,
-    var armor: Int
-)
-
-private data class Item(
-    val cost: Int,
-    val damage: Int,
-    val armor: Int
-)
