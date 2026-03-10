@@ -1,5 +1,6 @@
 package year2015
 
+import tools.md5
 import java.security.MessageDigest
 
 fun main() {
@@ -36,14 +37,6 @@ class Day4 {
                 break
             }
             i++
-        }
-    }
-
-    private fun md5(input: String): String {
-        val md = MessageDigest.getInstance("MD5")
-        val digested = md.digest(input.toByteArray())
-        return digested.joinToString("") {
-            String.format("%02x", it)
         }
     }
 }
