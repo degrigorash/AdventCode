@@ -1,7 +1,5 @@
 package year2015
 
-import kotlin.math.max
-
 fun main() {
     Day21().part1()
     Day21().part2()

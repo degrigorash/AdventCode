@@ -1,10 +1,6 @@
 package year2016
 
 import tools.readFile
-import kotlin.math.max
-import kotlin.math.min
-import kotlin.text.isNotBlank
-import kotlin.text.split
 
 fun main() {
     Day3().part1()

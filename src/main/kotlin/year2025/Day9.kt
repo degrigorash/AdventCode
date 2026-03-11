@@ -1,10 +1,7 @@
 package year2025
 
 import tools.readFile
-import kotlin.collections.forEach
 import kotlin.math.absoluteValue
-import kotlin.math.pow
-import kotlin.math.sqrt
 
 fun main() {
     Day9().part1()

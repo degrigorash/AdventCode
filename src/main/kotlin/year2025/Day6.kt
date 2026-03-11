@@ -1,7 +1,6 @@
 package year2025
 
 import tools.readFile
-import kotlin.collections.forEach
 
 fun main() {
     Day6().part1()

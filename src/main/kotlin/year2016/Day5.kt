@@ -1,16 +1,10 @@
 package year2016
 
 import tools.md5
-import tools.readFile
 import tools.readFileText
-import kotlin.comparisons.compareBy
-import kotlin.math.max
-import kotlin.math.min
-import kotlin.text.isNotBlank
-import kotlin.text.split
 
 fun main() {
-//    Day5().part1()
+    Day5().part1()
     Day5().part2()
 }
 

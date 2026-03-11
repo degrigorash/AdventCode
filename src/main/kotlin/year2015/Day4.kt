@@ -1,7 +1,6 @@
 package year2015
 
 import tools.md5
-import java.security.MessageDigest
 
 fun main() {
     Day4().apply {
