@@ -33,12 +33,12 @@ class Day1 {
 
     fun part2() {
         run loop@{
-            input.forEachIndexed { index, it ->
+            input.forEachIndexed { _, it ->
                 if (it[0] == 'R') angle -= 90 else angle += 90
                 val value = it.substring(1).toInt()
                 when {
                     angle == 0 || angle % 360 == 0 -> {
-                        (1..value).forEach { v ->
+                        (1..value).forEach { _ ->
                             coordinates.x += 1
                             if (!locations.add(coordinates.copy())) {
                                 result = abs(coordinates.x) + abs(coordinates.y)
@@ -48,7 +48,7 @@ class Day1 {
                     }
 
                     angle % 180 == 0 -> {
-                        (1..value).forEach { v ->
+                        (1..value).forEach { _ ->
                             coordinates.x -= 1
                             if (!locations.add(coordinates.copy())) {
                                 result = abs(coordinates.x) + abs(coordinates.y)
@@ -58,7 +58,7 @@ class Day1 {
                     }
 
                     angle % 360 == -270 || angle % 360 == 90 -> {
-                        (1..value).forEach { v ->
+                        (1..value).forEach { _ ->
                             coordinates.y += 1
                             if (!locations.add(coordinates.copy())) {
                                 result = abs(coordinates.x) + abs(coordinates.y)
@@ -68,7 +68,7 @@ class Day1 {
                     }
 
                     angle % 360 == -90 || angle % 360 == 270 -> {
-                        (1..value).forEach { v ->
+                        (1..value).forEach { _ ->
                             coordinates.y -= 1
                             if (!locations.add(coordinates.copy())) {
                                 result = abs(coordinates.x) + abs(coordinates.y)

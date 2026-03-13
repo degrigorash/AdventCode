@@ -13,3 +13,5 @@ fun <T> List<T>.permutations(): List<List<T>> {
     }
     return perms
 }
+
+fun Collection<*>.printEach() = this.forEach { println(it) }
